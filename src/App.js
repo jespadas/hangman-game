@@ -171,6 +171,7 @@ class App extends Component {
                             </tr>
                             </tbody>
                         </table>
+                        <img className="logo-personal" src="./logopersonalredondo.png"/>
                     </div>
 
             </div>
