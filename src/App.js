@@ -31,8 +31,7 @@ class App extends Component {
         matchedIndex: [],
         matchedWord: App.generateWord(),
         guesses: 0,
-        scores: [0],
-        player: ['Player 1'],
+        scores: 0,
     };
 
     static generateWord() {
@@ -44,16 +43,17 @@ class App extends Component {
     handleLetterClick = index => {
         const {letters, selectedLetters, matchedWord, guesses, scores} = this.state;
         const letter = letters[index];
-        let newScores = this.state.scores.slice();
+        let newScores = this.state.scores;
 
         if (matchedWord.indexOf(letter) !== -1) {
             if (selectedLetters.indexOf(letter) === -1) {
                 this.updateMatchedLetters(letter);
-                newScores['Player 1'] = scores['Player 1'] + 2;
+                newScores = scores + 2;
+                console.log(newScores);
                 this.setState({scores: newScores});
             }
         } else {
-            newScores['Player 1'] = scores['Player 1'] - 1;
+            newScores = scores - 1;
             this.setState({scores: newScores});
             this.setState({guesses: guesses + 1});
         }
@@ -94,7 +94,6 @@ class App extends Component {
                 return 'visible';
             }
         }
-
         return 'hidden';
     };
 
@@ -106,8 +105,8 @@ class App extends Component {
             matchedWord: App.generateWord(),
             guesses: 0,
             scores: [0],
-            player: ['Player 1'],
         });
+        window.location.reload();
     };
 
     render() {
@@ -171,7 +170,7 @@ class App extends Component {
                             </tr>
                             </tbody>
                         </table>
-                        <img className="logo-personal" src="./logopersonalredondo.png"/>
+                        <img className="logo-personal" src="logopersonalredondo.png" alt="logo julio"/>
                     </div>
 
             </div>

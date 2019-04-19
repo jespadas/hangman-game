@@ -15,7 +15,7 @@ Word.propTypes = {
     letter: PropTypes.string.isRequired,
     feedback: PropTypes.oneOf([
         'hidden',
-        'visible'
+        'visible',
     ]).isRequired,
 };
 

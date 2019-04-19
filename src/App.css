@@ -1,9 +1,10 @@
 .pendu-game {
   text-align: center;
+  background-color: white;
 }
 
 .tries {
- background-color: gray;
+ background-color: black;
  overflow: hidden;
  width: 100%;
   color: white;
@@ -32,7 +33,7 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: gray;
+  background-color: black;
   color: white;
   text-align: center;
   justify-content: center;
